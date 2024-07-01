@@ -68,12 +68,12 @@ app.post('/InsertarEquipos', async function(req,res) {
 })
 
 app.post('/InsertarPartidos', async function(req,res) {
-    console.log(req.body) 
+    console.log(req.body 
     result = await MySQL.realizarQuery(`SELECT * FROM Partidos WHERE fecha = '${req.body.fecha}' AND equipo_local = '${req.body.equipo_local}' AND equipo_visitante = '${req.body.equipo_visitante}' AND goles_local = '${req.body.goles_local}' AND goles_visitante = '${req.body.goles_visitante}'`);
     if (result.length > 0) {
         res.send("Ya existe")
     } else {
-        await MySQL.realizarQuery(`INSERT INTO Partidos (fecha, equipo_local, equipo_visitante, goles_local, goles_visitante) VALUES ('${req.body.fecha}','${req.body.equipo_local}','${req.body.equipo_visitante}','${req.body.goles_local}','${req.body.goles_visitante}')`);
+        await MySQL.realizarQuery(`INSERT INTO Partido (fecha, equipo_local, equipo_visitante, goles_local, goles_visitante) VALUES ('${req.body.fecha}','${req.body.equipo_local}','${req.body.equipo_visitante}','${req.body.goles_local}','${req.body.goles_visitante}')`);
         res.send("ok")
     }
 })
