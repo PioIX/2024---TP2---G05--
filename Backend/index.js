@@ -97,7 +97,7 @@ app.put('/actualizarPartidos', async function(req, res){
 
 app.put('/actualizarEquipos', async function(req, res){
     console.log(req.body)
-    await MySQL.realizarQuery(`UPDATE Equipos SET nombre_ciuda = '${req.body.nombre_ciudad}' WHERE id_equipo = ${req.body.id_equipo};`)
+    await MySQL.realizarQuery(`UPDATE Equipos SET nombre_ciudad = '${req.body.nombre_ciudad}' WHERE id_equipo = ${req.body.id_equipo};`)
     res.send("ok")
 })
 
