@@ -68,6 +68,7 @@ app.post('/InsertarEquipos', async function(req,res) {
 })
 
 app.post('/InsertarPartidos', async function(req,res) {
+
     console.log(req.body) 
     result = await MySQL.realizarQuery(`SELECT * FROM Partidos WHERE fecha = '${req.body.fecha}' AND equipo_local = '${req.body.equipo_local}' AND equipo_visitante = '${req.body.equipo_visitante}' AND goles_local = '${req.body.goles_local}' AND goles_visitante = '${req.body.goles_visitante}'`);
     if (result.length > 0) {
