@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TP "Restauración Conservadora" - Jug.ar</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <div id="titulo">
+        Trabajo Práctico 4: Creación de Aplicación Web
+    </div>
+    <!--PUNTO 1-->
+    <h1 id="ejemplo">Tabla - Jugadores</h1>
+    <button onclick="traigoTablaUno()">Mostrar tabla</button> <button onclick="escondoTabla()">Esconder tabla</button>
+    <br>
+    <br>
+    <table id="tablaPunto1"></table>
+    <br>
+    <!--PUNTO 2-->
+    <h1>Agregar jugador</h1>
+    <p>Ingrese los datos necesarios para crear un nuevo jugado. Luego aprete ENVIAR para registrarlo en la base de datos.</p>
+    <form id="formulario">
+        <input type="text" id="id_equipo" placeholder="ID Equipo">
+        <input type="text" id="nombre_jugador" placeholder="Nombre del Jugador">
+        <input type="text" id="posicion" placeholder="Posición">
+        <input type="text" id="nacionalidad" placeholder="Nacionalidad">
+        <input type="text" id="fecha_nacimiento" placeholder="Fecha de Nacimiento">
+        <button onclick="envioPost()">Enviar</button>
+    </form>    
+    <br>
+    <br>
+    <!--PUNTO 4-->
+    <h1>Modificar jugador</h1>
+    <p>Ingrese los datos necesarios para modificar un jugador. Luego aprete del boton ACTUALIZAR en el jugador que desee modificar.</p>
+    <form id="formularioDos">
+        <input type="text" id="id_equipoDos" placeholder="ID Equipo"> 
+        <input type="text" id="nombre_jugadorDos" placeholder="Nombre del Jugador">
+        <input type="text" id="posicionDos" placeholder="Posición">
+        <input type="text" id="nacionalidadDos" placeholder="Nacionalidad">
+        <input type="text" id="fecha_nacimientoDos" placeholder="Fecha de Nacimiento">
+    </form>
+    <script src="dom.js"></script>
+</body>
+</html>
