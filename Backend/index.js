@@ -117,7 +117,7 @@ app.put('/actualizarJugadores', async function(req, res){
 
 
 
-app.delete("/borrarEquipo", async function(req,res) {
+app.delete("/borrarEquipos", async function(req,res) {
 	console.log(req.body)
 	await MySQL.realizarQuery(`DELETE FROM Equipos WHERE nombre_equipo = '${req.body.nombre_equipo}';`)
 	res.send("ok")
