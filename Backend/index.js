@@ -85,7 +85,7 @@ app.post('/InsertarJugadores', async function(req,res) {
     if (result.length > 0) {
         res.send("Ya existe")
     } else {
-        await MySQL.realizarQuery(`INSERT INTO Jugadores (id_equipo, nombre_jugador, posicion, nacionalidad, fecha_nacimiento) VALUES ('${req.body.id_equipo}', '${req.body.nombre_jugador}','${req.body.posicion}','${req.body.nacionalidad}', '${req.body.fecha_nacimiento}')`);
+        await realizarQuery(`INSERT INTO Jugadores (id_equipo, nombre_jugador, posicion, nacionalidad, fecha_nacimiento) VALUES ('${req.body.id_equipo}', '${req.body.nombre_jugador}','${req.body.posicion}','${req.body.nacionalidad}', '${req.body.fecha_nacimiento}')`);
         res.send("ok")
     }
 })
@@ -104,8 +104,7 @@ app.put('/actualizarEquipos', async function(req, res){
 
 app.put('/actualizarJugadores', async function(req, res){
     console.log(req.body);
-    /*vuelvo a subir la branch que se borro. Si correjis esto borra este mensaje */
-    const { id_jugador, id_equipo, nombre_jugador, Posicion, nacionalidad, fecha_nacimiento } = req.body;
+    const { id_jugador, id_equipo, nombre_jugador, posicion, nacionalidad, fecha_nacimiento } = req.body;
     let result = await MySQL.realizarQuery(`SELECT * FROM Jugadores WHERE id_equipo = ${req.body.id_equipo}`);
     console.log("result es")
     console.log(result)
