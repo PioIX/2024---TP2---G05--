@@ -136,7 +136,7 @@ app.delete("/borrarJugadores", async function(req,res) {
 	console.log(req.body)
 	await MySQL.realizarQuery(`DELETE FROM Jugadores WHERE nombre_jugador = '${req.body.nombre_jugador}';`)
 	res.send("ok")
-
+}
 
 
 app.listen(port, function(){
