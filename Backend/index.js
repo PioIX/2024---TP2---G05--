@@ -85,7 +85,7 @@ app.post('/InsertarJugadores', async function(req,res) {
     if (result.length > 0) {
         res.send("Ya existe")
     } else {
-        await realizarQuery(`INSERT INTO Jugadores (id_equipo, nombre_jugador, posicion, nacionalidad, fecha_nacimiento) VALUES ('${req.body.id_equipo}', '${req.body.nombre_jugador}','${req.body.posicion}','${req.body.nacionalidad}', '${req.body.fecha_nacimiento}')`);
+        await MySQL.realizarQuery(`INSERT INTO Jugadores (id_equipo, nombre_jugador, posicion, nacionalidad, fecha_nacimiento) VALUES ('${req.body.id_equipo}', '${req.body.nombre_jugador}','${req.body.posicion}','${req.body.nacionalidad}', '${req.body.fecha_nacimiento}')`);
         res.send("ok")
     }
 })
@@ -136,7 +136,7 @@ app.delete("/borrarJugadores", async function(req,res) {
 	console.log(req.body)
 	await MySQL.realizarQuery(`DELETE FROM Jugadores WHERE nombre_jugador = '${req.body.nombre_jugador}';`)
 	res.send("ok")
-
+})
 
 
 app.listen(port, function(){
