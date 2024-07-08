@@ -104,7 +104,7 @@ app.put('/actualizarEquipos', async function(req, res){
 
 app.put('/actualizarJugadores', async function(req, res){
     console.log(req.body);
-    const { id_jugador, id_equipo, nombre_jugador, Posicion, nacionalidad, fecha_nacimiento } = req.body;
+    const { id_jugador, id_equipo, nombre_jugador, posicion, nacionalidad, fecha_nacimiento } = req.body;
     let result = await MySQL.realizarQuery(`SELECT * FROM Jugadores WHERE id_equipo = ${req.body.id_equipo}`);
     console.log("result es")
     console.log(result)
