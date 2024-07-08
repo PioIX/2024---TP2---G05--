@@ -29,7 +29,7 @@ app.get('/saludo', function(req,res){
 
 app.get('/Equipos', async function(req,res){
     console.log(req.query) 
-    const respuesta = await MySQL.realizarQuery(`
+    const respuesta = MySQL.realizarQuery(`
     SELECT * FROM Equipos;
     `)
     res.send(respuesta)
